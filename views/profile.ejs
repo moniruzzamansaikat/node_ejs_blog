@@ -1,0 +1,57 @@
+<!-- profile header -->
+<div class="profile_top">
+  <div class="cover_img"></div>
+
+  <div class="card">
+    <img src="<%= profileUser.avatar %> " alt="" />
+
+    <% if(user?.username == profileUser?.username) {%>
+    <a href="/setting" class="btn btn-primary profile_edit_button">Edit Profile</a>
+    <% } else if(user) { %>
+    <a href="/setting" class="btn btn-primary profile_edit_button">Follow</a>
+    <% }%>
+
+    <div class="text-center">
+      <h2 style="margin-top: -14px"><%= profileUser.name %></h2>
+      <p><%= profileUser.bio %></p>
+
+      <div class="pb-3">
+        <span class="me-3"><i class="fa fa-map-marker me-2"></i><%= profileUser.location %></span>
+        <span
+          ><i class="fa fa-external-link-alt me-2"></i
+          ><a target="_blank" href="<%= profileUser.website_url %>"><%= profileUser.website_url %></a></span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- profile sidebar and posts -->
+<div class="row mt-4">
+  <div class="col col-12 col-md-4 mb-4">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mt-2">Skills Languages</h5>
+      </div>
+      <div class="card-body">
+        <p><%= profileUser.skills %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col col-12 col-md-8">
+    <div class="card post_item p-2">
+      <h2 class="post_title">
+        <a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nemo! 🔥</a>
+      </h2>
+      <div class="tags my-2">
+        <small class="badge pill bg-dark">#javascript</small>
+        <small class="badge pill bg-dark">#react</small>
+        <small class="badge pill bg-dark">#nodejs</small>
+      </div>
+      <div class="post_info my-2">
+        <span class="me-3"><i class="fa fa-heart"></i> 1023 reactions</span>
+        <span><i class="fa fa-comments"></i> 10 comments</span>
+      </div>
+    </div>
+  </div>
+</div>

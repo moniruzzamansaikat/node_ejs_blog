@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/img/logo.png" id="site_logo" alt="" />
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <% if(!user ) { %>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/auth/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-success" href="/auth/signup">Create Account</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item me-3">
+          <a href="/new" class="btn btn-sm btn-primary">Create Post</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown dropstart">
+            <a id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <img
+                src="<%= user.avatar %>"
+                alt="<%= user.name %>"
+                style="width: 30px; border-radius: 50%; cursor: pointer"
+              />
+            </a>
+
+            <ul class="dropdown-menu cstm" aria-labelledby="dropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="/p/<%= user.username %>">
+                  <p><%= user.name %></p>
+                  <span><%= user.username %></span>
+                </a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/setting">Setting</a></li>
+              <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
+            </ul>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

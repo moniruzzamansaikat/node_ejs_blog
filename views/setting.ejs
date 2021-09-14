@@ -1,0 +1,55 @@
+<h2 class="my-3">Setting</h2>
+
+<!-- User inforamtion -->
+<form action="/setting/update" method="POST">
+  <div class="card p-3">
+    <h2>User</h2>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>" />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" />
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="username" class="form-control" id="username" name="username" value="<%= user.username %>" />
+    </div>
+  </div>
+
+  <!-- Basic information -->
+  <div class="card p-3 mt-4">
+    <h2>Basic</h2>
+    <div class="mb-3">
+      <label for="website_url" class="form-label">Website URL</label>
+      <input type="text" class="form-control" id="website_url" name="website_url" value="<%= user.website_url %>" />
+    </div>
+    <div class="mb-3">
+      <label for="lcoation" class="form-label">Location</label>
+      <input type="text" class="form-control" id="lcoation" name="location" value="<%= user.location %>" />
+    </div>
+    <div class="mb-3">
+      <label for="bio" class="form-label">Bio</label>
+      <textarea class="form-control" id="bio" name="bio" rows="3"> <%= user.bio %></textarea>
+    </div>
+  </div>
+
+  <div class="card p-3 mt-4">
+    <h2>Coding</h2>
+    <div class="mb-3">
+      <label for="skills" class="form-label">Skills/languages</label>
+      <textarea type="skills" class="form-control" id="skills" name="skills">
+        <%= user.skills %>
+      </textarea>
+    </div>
+  </div>
+
+  <!-- save button -->
+  <div class="card p-3 mt-4">
+    <button class="btn btn-primary" type="submit">Save Profile Information</button>
+  </div>
+</form>
+
+<!-- spacer -->
+<div class="my-4"></div>

@@ -1,0 +1,15 @@
+<div class="card p-3">
+  <h1 style="font-weight: 900; font-size: 3.5rem"><%= post.title %></h1>
+  <div class="tags my-3">
+    <% post.tags.forEach(tag => {%>
+    <small class="badge pill bg-dark">#<%= tag %></small>
+    <% }) %>
+  </div>
+  <div class="user_info mb-3">
+    <img src="<%= post.user.avatar %>" alt="" style="width: 30px; height: 30px; border-radius: 50%" />
+    <span class="ms-1">
+      <a href="/p/<%= post.user.username %>"><%= post.user.name %></a>
+    </span>
+  </div>
+  <div class="md_container"><%= post.post_body %></div>
+</div>
