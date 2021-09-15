@@ -28,5 +28,29 @@
   </div>
 </div>
 
+<!-- posts -->
+<h4 class="mb-0 mt-4">Posts</h4>
+<div class="card mt-4 p-3">
+  <table class="table">
+    <tbody>
+      <% if(posts){ posts.forEach(post => { %>
+      <tr>
+        <td>
+          <a href="/posts/<%= post._id %>" style="text-decoration: none; font-size: 1.1rem; font-weight: 600"
+            ><%= post.title %></a
+          >
+        </td>
+        <td>
+          <a href="/posts/edit/<%=post._id%>" style="text-decoration: none; font-weight: 700; color: rgb(88, 88, 88)"
+            >Edit</a
+          >
+          <a href="#" class="btn btn-danger btn-sm ms-3">Delete</a>
+        </td>
+      </tr>
+      <% }) } %>
+    </tbody>
+  </table>
+</div>
+
 <!-- spacer -->
 <div class="my-3"></div>

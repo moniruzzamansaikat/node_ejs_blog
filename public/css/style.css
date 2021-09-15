@@ -63,3 +63,14 @@ img#site_logo {
   right: 1rem;
   top: 1rem;
 }
+
+/* media queries */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+}
+
+.pill a {
+  color: #f0f0f0;
+}

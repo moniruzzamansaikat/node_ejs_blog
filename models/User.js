@@ -12,6 +12,8 @@ const UserSchema = new Schema({
   skills: { type: String, default: "" },
   bio: { type: String, default: "" },
   posts: [{ type: Types.ObjectId, ref: "Post" }],
+  followers: [{ type: Types.ObjectId, ref: "User" }],
+  following: [{ type: Types.ObjectId, ref: "User" }],
 });
 
 const User = model("User", UserSchema);

@@ -6,10 +6,13 @@ const Post = require("../models/Post");
 // render posts with tags
 router.get("/t/:tag", async (req, res) => {
   const { tag } = req.params;
-  const posts = await Post.find({});
+  let posts = await Post.find({}).populate("user").lean(true);
+  posts = posts.filter((post) => post.tags.includes(tag));
+  posts.forEach((post) => (post.tags = post.tags.split(",")));
   res.render("tagged_posts", {
     layout: "main",
     tag,
+    posts,
   });
 });
 

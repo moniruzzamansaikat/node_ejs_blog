@@ -9,7 +9,7 @@ const PostSchema = new Schema({
     ref: "User",
   },
   reactions: { type: Number, default: 0 },
-  comments: [{ type: Types.ObjectId, ref: "User" }],
+  comments: [{ comment_body: String, user: { type: Types.ObjectId, ref: "User" } }],
 });
 
 const Post = model("Post", PostSchema);
