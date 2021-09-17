@@ -2,6 +2,7 @@ const { model, Schema, Types } = require("mongoose");
 
 const UserSchema = new Schema({
   username: String,
+  isAdming: { type: Boolean, default: false },
   name: String,
   email: String,
   githubId: String,

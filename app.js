@@ -42,6 +42,7 @@ app.use("/", require("./routes/index"));
 app.use("/dashboard", auth, require("./routes/dashborad"));
 app.use("/setting", auth, require("./routes/setting"));
 app.use("/users", auth, require("./routes/users"));
+app.use("/admin", mustBeAdmin, require("./routes/admin"));
 app.use("/posts", require("./routes/posts"));
 app.use("/auth", require("./routes/auth"));
 
@@ -50,3 +51,12 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("server is running on port, " + PORT);
 });
+
+// todo: change this somewhere else
+function mustBeAdmin(req, res, next) {
+  const { user } = req;
+  if (!user || !user.isAdmin) {
+    return res.redirect("back");
+  }
+  next();
+}
