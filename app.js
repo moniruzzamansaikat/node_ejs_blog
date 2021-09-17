@@ -46,6 +46,13 @@ app.use("/admin", mustBeAdmin, require("./routes/admin"));
 app.use("/posts", require("./routes/posts"));
 app.use("/auth", require("./routes/auth"));
 
+// 404 page
+app.get("*", (req, res) => {
+  res.render("404", {
+    layout: "main",
+  });
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
