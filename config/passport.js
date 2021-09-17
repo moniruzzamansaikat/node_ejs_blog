@@ -22,7 +22,7 @@ const config = (passport) => {
       {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: "http://localhost:5000/auth/facebook/callback",
+        callbackURL: "https://devblog1.herokuapp.com/auth/facebook/callback",
       },
       async function (accessToken, refreshToken, profile, cb) {
         const { id, displayName } = profile;
@@ -48,7 +48,7 @@ const config = (passport) => {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: "http://localhost:5000/auth/github/callback",
+        callbackURL: "https://devblog1.herokuapp.com/auth/github/callback",
       },
       async function (accessToken, refreshToken, profile, cb) {
         const { id, displayName, photos, profileUrl } = profile;
