@@ -40,5 +40,7 @@ $($publish_button).on("click", function () {
 // show markdown to html
 const mdConverter = new showdown.Converter();
 const mdContent = document.querySelector("div.md_container");
-const html = mdConverter.makeHtml(mdContent.innerHTML);
-mdContent.innerHTML = html;
+if (mdContent) {
+  const html = mdConverter.makeHtml(mdContent.innerHTML);
+  mdContent.innerHTML = html;
+}
