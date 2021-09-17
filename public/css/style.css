@@ -74,3 +74,8 @@ img#site_logo {
 .pill a {
   color: #f0f0f0;
 }
+
+/* link but not like a link */
+a.custom_link {
+  text-decoration: none;
+}
