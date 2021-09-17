@@ -53,4 +53,11 @@ router.get("/p/:username", async (req, res) => {
   });
 });
 
+// privacy & policy page
+router.get("/privacy", async (req, res) => {
+  res.render("admin/privacy_page", {
+    layout: "main",
+  });
+});
+
 module.exports = router;
