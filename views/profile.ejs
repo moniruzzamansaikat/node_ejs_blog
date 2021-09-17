@@ -8,7 +8,16 @@
     <% if(user?.username == profileUser?.username) {%>
     <a href="/setting" class="btn btn-primary profile_edit_button">Edit Profile</a>
     <% } else if(user) { %>
-    <a href="/setting" class="btn btn-primary profile_edit_button">Follow</a>
+    <form action="/users/follow" method="POST">
+      <input type="hidden" name="userId" value="<%= profileUser._id %>" />
+      <button type="submit" class="btn btn-primary profile_edit_button">
+        <% if(user.following.includes(profileUser._id)) { %>
+        <span>Unfollow</span>
+        <% } else {%>
+        <span>Follow</span>
+        <% } %>
+      </button>
+    </form>
     <% }%>
 
     <div class="text-center">
@@ -38,20 +47,25 @@
       </div>
     </div>
   </div>
+
   <div class="col col-12 col-md-8">
+    <% if(posts) { %> <% posts.forEach(post => { %>
     <div class="card post_item p-2">
       <h2 class="post_title">
-        <a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nemo! 🔥</a>
+        <a href="/posts/<%= post._id %>"><%= post.title %> </a>
       </h2>
       <div class="tags my-2">
-        <small class="badge pill bg-dark">#javascript</small>
-        <small class="badge pill bg-dark">#react</small>
-        <small class="badge pill bg-dark">#nodejs</small>
+        <% post.tags.forEach(tag => { %>
+        <small class="badge pill bg-dark">
+          <a href="/t/<%= tag %>"><%= tag %></a>
+        </small>
+        <% })%>
       </div>
       <div class="post_info my-2">
-        <span class="me-3"><i class="fa fa-heart"></i> 1023 reactions</span>
-        <span><i class="fa fa-comments"></i> 10 comments</span>
+        <span class="me-3"><i class="fa fa-heart"></i> <%= post.reactions %> reactions</span>
+        <span><i class="fa fa-comments"></i> <%= post.comments.length %> comments</span>
       </div>
     </div>
+    <% }) %> <% } %>
   </div>
 </div>

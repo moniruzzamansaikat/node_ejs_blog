@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index"));
 app.use("/dashboard", auth, require("./routes/dashborad"));
 app.use("/setting", auth, require("./routes/setting"));
+app.use("/users", auth, require("./routes/users"));
 app.use("/posts", require("./routes/posts"));
 app.use("/auth", require("./routes/auth"));
 

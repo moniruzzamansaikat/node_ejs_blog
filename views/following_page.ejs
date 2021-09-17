@@ -1,1 +1,24 @@
 <h1>Following</h1>
+<div class="row my-4">
+  <% if(following) { %> <% following.forEach(user => { %>
+  <div class="col col-md-4 col-12">
+    <div class="card py-4 px-2 text-center">
+      <img
+        src="<%= user.avatar %>"
+        alt="<%= user.name %>"
+        style="
+          width: 60px;
+          height: 60px;
+          display: inline-block;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          border-radius: 50%;
+          margin-bottom: 10px;
+        "
+      />
+      <h5><%= user.name %></h5>
+      <h6>@<%= user.username %></h6>
+    </div>
+  </div>
+  <% })} %>
+</div>

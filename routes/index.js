@@ -43,10 +43,13 @@ router.get("/", async (req, res) => {
 router.get("/p/:username", async (req, res) => {
   const { username } = req.params;
   const user = await User.findOne({ username });
+  const posts = await Post.find({ user }).lean(true);
+  posts.forEach((post) => (post.tags = post.tags.split(",")));
 
   res.render("profile", {
     layout: "main",
     profileUser: user,
+    posts,
   });
 });
 

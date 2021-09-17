@@ -19,8 +19,8 @@ router.get("/followers", async (req, res) => {
 // render following
 router.get("/following", async (req, res) => {
   const following_ids = req.user.following;
-  const followers = await User.find({ _id: { $in: following_ids } }).lean();
-  res.render("following_page", { layout: "main", followers });
+  const following = await User.find({ _id: { $in: following_ids } }).lean();
+  res.render("following_page", { layout: "main", following });
 });
 
 module.exports = router;
