@@ -55,9 +55,8 @@ app.listen(PORT, () => {
 // todo: change this somewhere else
 function mustBeAdmin(req, res, next) {
   const { user } = req;
-  if (!user || !user.isAdmin) {
-    return res.redirect("back");
+  if (user && user.isAdmin) {
+    return next();
   }
-
-  next();
+  return res.redirect("back");
 }
