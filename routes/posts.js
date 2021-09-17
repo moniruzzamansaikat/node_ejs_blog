@@ -63,4 +63,11 @@ router.post("/comments", auth, async (req, res) => {
   res.redirect("/posts/" + post_id);
 });
 
+// delete post
+router.get("/:id/delete", async (req, res) => {
+  const { id } = req.params;
+  await Post.findByIdAndDelete(id);
+  res.redirect("/dashboard");
+});
+
 module.exports = router;
