@@ -58,5 +58,6 @@ function mustBeAdmin(req, res, next) {
   if (!user || !user.isAdmin) {
     return res.redirect("back");
   }
+
   next();
 }
