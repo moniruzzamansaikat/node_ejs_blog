@@ -2,7 +2,7 @@
 <div class="row my-4">
   <% if(followers) { %> <% followers.forEach(user => { %>
   <div class="col col-md-4 col-12">
-    <div class="card py-4 px-2 text-center">
+    <div class="card py-4 px-2 text-center my-2">
       <a href="/p/<%= user.username %>" class="custom_link">
         <img
           src="<%= user.avatar %>"

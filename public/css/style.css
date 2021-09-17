@@ -79,3 +79,33 @@ img#site_logo {
 a.custom_link {
   text-decoration: none;
 }
+
+/* write comment */
+.comment_box {
+  display: flex;
+}
+
+.comment_box .user_avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.comment_box .text_input textarea {
+  width: 100%;
+}
+
+/* Post comment item with user  */
+.user_comment_item {
+  display: flex;
+}
+
+.user_comment_item .user_photo_div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
