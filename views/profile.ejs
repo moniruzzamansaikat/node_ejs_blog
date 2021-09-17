@@ -20,7 +20,7 @@
     </form>
     <% }%>
 
-    <div class="text-center">
+    <div class="text-center make_left_on_small">
       <h2 style="margin-top: -14px"><%= profileUser.name %></h2>
       <p><%= profileUser.bio %></p>
 
@@ -48,6 +48,7 @@
     </div>
   </div>
 
+  <!-- user based posts -->
   <div class="col col-12 col-md-8">
     <% if(posts) { %> <% posts.forEach(post => { %>
     <div class="card post_item p-2 my-2">

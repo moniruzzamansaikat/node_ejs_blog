@@ -69,6 +69,18 @@ img#site_logo {
   h1 {
     font-size: 2rem !important;
   }
+
+  .profile_top .card img {
+    left: 10px;
+    transform: translateX(0);
+    height: 80px;
+    width: 80px;
+  }
+
+  .text-center.make_left_on_small {
+    text-align: left !important;
+    padding-left: 1rem;
+  }
 }
 
 .pill a {
