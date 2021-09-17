@@ -38,7 +38,7 @@
           <img src="<%= post.user.avatar%>" />
         </div>
         <div class="text_input">
-          <textarea <%= !user ? 'disabled' : '' %> name="comment_body" placeholder="Add your comment" class="form-control"></textarea>
+          <textarea <%= !user ? 'disabled' : '' %>  name="comment_body" placeholder="Add your comment" class="form-control" required></textarea>
           <button <%= !user ? 'disabled' : '' %> class="btn btn-sm btn-primary mt-2">Submit</button>
         </div>
       </div>
