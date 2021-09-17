@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:disabled {
+  cursor: not-allowed !important;
+}
+
 /* nav */
 nav {
   background-color: #fff !important;
@@ -125,4 +129,24 @@ a.custom_link {
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
+}
+
+/* likes & comment button */
+.like_and_comment_wrapper {
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-weight: 200;
+}
+
+.like_and_comment_wrapper .fa {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.2rem;
+  color: #272727;
+}
+
+.like_and_comment_wrapper:hover {
+  cursor: pointer;
+  background: #f0f0f0;
 }

@@ -16,9 +16,22 @@
     </div>
     <div class="md_container"><%= post.post_body %></div>
 
+    <!-- like post -->
+    <div class="d-flex align-items-center">
+      <button <%= !user ? 'disabled' : '' %> class="like_and_comment_wrapper btn w-100 text-center">
+        <span>Like</span>
+        <i class="fa fa-thumbs-up"></i>
+      </button>
+      <button <%= !user ? 'disabled' : '' %> id="comment_button" class="btn like_and_comment_wrapper w-100 ms-2 text-center">
+        <span>Add a comment</span>
+        <i class="fa fa-comment"></i>
+      </button>
+    </div>
+    <!-- end like post -->
+
     <hr style="margin-bottom: -5px; margin-top: 10px" />
     <h2 class="mt-2">Comments (<%= post.comments.length %>)</h2>
-    <form action="/posts/comments" method="POST" class="my-3">
+    <form action="/posts/comments" method="POST" class="my-4">
       <input type="hidden" name="post_id" value="<%= post._id %>" />
       <div class="comment_box">
         <div class="user_avatar">

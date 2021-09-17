@@ -44,3 +44,11 @@ if (mdContent) {
   const html = mdConverter.makeHtml(mdContent.innerHTML);
   mdContent.innerHTML = html;
 }
+
+/*
+ * Handle comment and like
+ */
+// focus comment box when comment button clicked
+$("button#comment_button").on("click", function () {
+  $('textarea[name="comment_body"]').focus();
+});
