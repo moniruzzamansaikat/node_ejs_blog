@@ -35,10 +35,10 @@
     <% post.comments.forEach(comment => { %>
     <div class="row my-2">
       <div class="col col-12 col-md-1">
-        <img src="<%= post.user.avatar%>" alt="" style="width: 60px; height: 60px; border-radius: 50%" />
+        <img src="<%= comment.user.avatar%>" alt="" style="width: 60px; height: 60px; border-radius: 50%" />
       </div>
       <div class="col col-12 col-md-11">
-        <h5><a href="/p/<%= comment.user.username %> "><%= post.user.name %></a></h5>
+        <h5><a href="/p/<%= comment.user.username %> "><%= comment.user.name %></a></h5>
         <p><%= comment.comment_body %></p>
       </div>
     </div>
