@@ -105,6 +105,10 @@ a.custom_link {
   margin-right: 10px;
 }
 
+.comment_box .text_input {
+  width: 100%;
+}
+
 .comment_box .text_input textarea {
   width: 100%;
 }
@@ -112,6 +116,7 @@ a.custom_link {
 /* Post comment item with user  */
 .user_comment_item {
   display: flex;
+  margin: 10px 0;
 }
 
 .user_comment_item .user_photo_div img {
