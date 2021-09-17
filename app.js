@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const auth = require("./config/auth");
+const User = require("./models/User");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -60,8 +61,8 @@ app.listen(PORT, () => {
 });
 
 // todo: change this somewhere else
-function mustBeAdmin(req, res, next) {
-  const { user } = req;
+async function mustBeAdmin(req, res, next) {
+  const user = await User.findById(req.user._id);
   if (user && user.isAdmin) {
     return next();
   }

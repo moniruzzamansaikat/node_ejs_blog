@@ -3,6 +3,22 @@ const User = require("../models/User");
 const auth = require("../config/auth");
 const Post = require("../models/Post");
 
+// render home page
+router.get("/", async (req, res) => {
+  let posts = await Post.find({}).populate("user").lean(true);
+  posts = posts.map((post) => {
+    return {
+      ...post,
+      tags: post.tags.split(","),
+    };
+  });
+
+  res.render("home", {
+    layout: "main",
+    posts,
+  });
+});
+
 // render posts with tags
 router.get("/t/:tag", async (req, res) => {
   const { tag } = req.params;
@@ -20,22 +36,6 @@ router.get("/t/:tag", async (req, res) => {
 router.get("/new", auth, (req, res) => {
   res.render("create_post", {
     layout: "main",
-  });
-});
-
-// render home page
-router.get("/", async (req, res) => {
-  let posts = await Post.find({}).populate("user").lean(true);
-  posts = posts.map((post) => {
-    return {
-      ...post,
-      tags: post.tags.split(","),
-    };
-  });
-
-  res.render("home", {
-    layout: "main",
-    posts,
   });
 });
 
